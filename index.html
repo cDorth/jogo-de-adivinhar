@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jogo Genio</title>
+</head>
+<style type="text/css">
+	body{background-image:url(" ./imagem/fundo.jpg");
+		background-repeat: no-repeat;
+		   background-attachment: fixed;
+		   background-position:center;
+		background-size: cover;
+
+
+	}
+	.bt {
+border:1px solid #25692A;
+border-radius:4px;
+display:inline-block;
+cursor:pointer;
+font-family:Verdana;
+font-weight:bold;
+font-size:13px;
+padding:6px 10px;
+text-decoration:none;
+} 
+
+.bt-vd {
+border-color:#68b465;
+background:linear-gradient(to bottom, #abd5aa 5%, #68b465 100%);
+box-shadow:inset 0px 1px 0px 0px #e3f1e3;
+color:#fff;
+text-shadow:0px 1px 0px #528009;
+}
+
+
+.bt-vm {
+border-color:#f61f0e;
+background:linear-gradient(to bottom, #fca8a1 5%, #f61f0e 100%);
+box-shadow:inset 0px 1px 0px 0px #fff4f3;
+color:#fff;
+text-shadow:0px 1px 0px #528009; 
+}
+
+.bt-vd:hover {
+background:linear-gradient(to bottom, #68b465 5%, #abd5aa 100%);
+}
+
+.bt-vm:hover {
+background:linear-gradient(to bottom, #f61f0e 5%, #fca8a1 100%);
+}
+
+.bt:active {
+position:relative;
+top:2px;}
+ 
+
+ .ac_box { width: 337px; }
+
+.img{
+
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+
+
+
+
+
+}
+</style>
+<body >
+
+<h1><center>JOGO DO GÊNIO</center></h1>
+
+<hr>
+<center><div id="img" >
+	
+<img src="imagem/guri.png" id="imagem" width="350px">
+
+</div>
+<div id="text" >
+
+<strong>	<span id="texto"> Pensei em um numero, consegue adivinhar?</span></strong>
+
+</div>
+
+
+
+
+
+
+<input type="text" class="ac_box" name="numero" id="numero"><br/>
+
+
+<div>
+	<button type="button" class="bt bt-vd" onclick="consigo()">Consigo</button>
+ 
+<button type="button" class="bt bt-vm" onclick="arrego()">Não consigo</button>
+</div>
+
+
+</center>
+
+
+</body>
+<script type="text/javascript">
+	
+var  numero = Math.floor(Math.random() * 10);
+
+
+ console.log('numero'+ numero);
+
+
+ function consigo() {
+
+
+var resp = parseInt(document.getElementById('numero').value);
+
+ 	
+ 		if (resp == numero) {
+
+ 				alert('PARÁBENS, VOCÊ ACERTOU!!!');
+ 		document.getElementById('imagem').src="imagem/genioAcertou.png";
+ 				document.getElementById('texto').innerHTML ='Aperte F5 para jogar novamente!';
+
+
+
+ 		}else{
+
+ 				alert('VOCÊ ERROU, TENTE NOVAMENTE');
+ 					document.getElementById('imagem').src="imagem/genioBolado.png";
+					document.getElementById('texto').innerHTML ='Aperte F5 para jogar novamente!';
+
+
+ 		}
+
+
+
+ }
+
+ function arrego(){
+
+					document.getElementById('imagem').src="imagem/gato.jpg";
+					document.getElementById('texto').innerHTML ='Aperte F5 para jogar novamente!';
+
+
+
+ }
+
+
+
+
+
+
+</script>
+</html>
